@@ -3,7 +3,17 @@
     {{ if or $.Site.Params.showMenuItems ( eq .Site.Params.showMenuItems 0 ) }}
       {{ range first $.Site.Params.showMenuItems $.Site.Menus.main }}
         {{ if not .HasChildren }}
-          <li><a href="{{ .URL }}"{{ if .Params.NewTab }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .Name }}</a></li>
+          {{ $isLinkedIn := eq .Identifier "linkedin" }}
+          <li{{ if $isLinkedIn }} class="navigation-menu__item--linkedin"{{ end }}>
+            <a href="{{ .URL }}"{{ if .Params.NewTab }} target="_blank" rel="noopener noreferrer"{{ end }}{{ if $isLinkedIn }} aria-label="LinkedIn profile"{{ end }}>
+              {{ if $isLinkedIn }}
+                <span class="navigation-menu__linkedin-label">{{ .Name }}</span>
+                <span class="navigation-menu__linkedin-icon" aria-hidden="true">in</span>
+              {{ else }}
+                {{ .Name }}
+              {{ end }}
+            </a>
+          </li>
         {{ end }}
       {{ end }}
       {{ if gt (len $.Site.Menus.main) $.Site.Params.showMenuItems }}
@@ -14,7 +24,17 @@
               <ul class="menu__dropdown">
                 {{ range last (sub (len $.Site.Menus.main) $.Site.Params.showMenuItems) $.Site.Menus.main }}
                   {{ if not .HasChildren }}
-                    <li><a href="{{ .URL }}"{{ if .Params.NewTab }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .Name }}</a></li>
+                    {{ $isLinkedIn := eq .Identifier "linkedin" }}
+                    <li{{ if $isLinkedIn }} class="navigation-menu__item--linkedin"{{ end }}>
+                      <a href="{{ .URL }}"{{ if .Params.NewTab }} target="_blank" rel="noopener noreferrer"{{ end }}{{ if $isLinkedIn }} aria-label="LinkedIn profile"{{ end }}>
+                        {{ if $isLinkedIn }}
+                          <span class="navigation-menu__linkedin-label">{{ .Name }}</span>
+                          <span class="navigation-menu__linkedin-icon" aria-hidden="true">in</span>
+                        {{ else }}
+                          {{ .Name }}
+                        {{ end }}
+                      </a>
+                    </li>
                   {{ end }}
                 {{ end }}
               </ul>
@@ -25,7 +45,17 @@
     {{ else }}
       {{ range $.Site.Menus.main }}
         {{ if not .HasChildren }}
-          <li><a href="{{ .URL }}"{{ if .Params.NewTab }} target="_blank" rel="noopener noreferrer"{{ end }}>{{ .Name }}</a></li>
+          {{ $isLinkedIn := eq .Identifier "linkedin" }}
+          <li{{ if $isLinkedIn }} class="navigation-menu__item--linkedin"{{ end }}>
+            <a href="{{ .URL }}"{{ if .Params.NewTab }} target="_blank" rel="noopener noreferrer"{{ end }}{{ if $isLinkedIn }} aria-label="LinkedIn profile"{{ end }}>
+              {{ if $isLinkedIn }}
+                <span class="navigation-menu__linkedin-label">{{ .Name }}</span>
+                <span class="navigation-menu__linkedin-icon" aria-hidden="true">in</span>
+              {{ else }}
+                {{ .Name }}
+              {{ end }}
+            </a>
+          </li>
         {{ end }}
       {{ end }}
     {{ end }}
