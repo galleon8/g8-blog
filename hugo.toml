@@ -14,7 +14,7 @@ enableRobotsTXT = true
   socialTitle = "Tech Writing | UX Writing | Docs Engineering"
   socialDescription = "Complex systems in plain words | Docs-as-code | AI-ready knowledge"
   dateFormat = "Jan 2, 2006"
-  showMenuItems = 4
+  showMenuItems = 5
   showLanguageSelector = false
   fullWidthTheme = false
   centerTheme = true
@@ -65,10 +65,19 @@ enableRobotsTXT = true
     weight = 30
 
   [[menu.main]]
+    identifier = "docs"
+    name = "Docs↗"
+    url = "https://docs.galleon8.com/"
+    weight = 40
+
+    [menu.main.params]
+      newTab = true
+
+  [[menu.main]]
     identifier = "linkedin"
     name = "LinkedIn↗"
     url = "https://www.linkedin.com/in/gene-danilov/"
-    weight = 40
+    weight = 50
 
     [menu.main.params]
       newTab = true

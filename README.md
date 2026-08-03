@@ -6,7 +6,7 @@
 
 Visit the live site: [galleon8.com](https://galleon8.com/)
 
-Related professional showcase: [Galleon8 Docs](https://galleon8.docs.buildwithfern.com/) is a separate Fern-based developer-documentation project that complements this site.
+Related professional showcase: [Galleon8 Docs](https://docs.galleon8.com/) is a separate Fern-based developer-documentation project that complements this site.
 
 ## Project Overview
 
@@ -22,7 +22,7 @@ Hugo is the implementation layer. The project uses Hugo and the Terminal theme a
 - Homepage and posts index that introduce the editorial direction and surface published essays.
 - Individual posts with publication dates, descriptions, reading-time metadata, and optional tags.
 - About and Resume pages with long-form professional narrative, experience, tools, industry background, and a downloadable CV.
-- Responsive navigation with links to About, Posts, Resume, and LinkedIn.
+- Responsive navigation with links to About, Posts, Resume, Docs, and LinkedIn.
 - Custom four-theme picker built on top of the Terminal theme's CSS-variable system.
 - Open Graph and Twitter Card metadata with a site-level social-preview image.
 
@@ -35,7 +35,7 @@ The public site is intentionally compact:
 - **Individual posts**: stored in `content/posts/` and used for long-form essays about technical writing, personal context, tools, technology, and professional development.
 - **About**: `content/about.md` explains the personal and professional path behind the site.
 - **Resume**: `content/resume.md` presents professional background, tools, industry experience, and links to the CV PDF in `static/files/`.
-- **Professional link**: the main navigation includes a verified LinkedIn link from `hugo.toml`.
+- **Professional links**: the main navigation includes Docs and verified LinkedIn links from `hugo.toml`.
 - **Feeds and metadata**: Hugo generates RSS output, while custom head templates define canonical, Open Graph, Twitter Card, favicon, manifest, and robots metadata.
 
 ## Visual Identity And Theming
@@ -180,7 +180,7 @@ GitHub Pages custom-domain configuration is external to the repository unless re
 ## Maintenance Reference
 
 - **Site title, base URL, metadata, pagination, and Hugo settings**: `hugo.toml`
-- **Main navigation and LinkedIn link**: `hugo.toml`
+- **Main navigation, Docs link, and LinkedIn link**: `hugo.toml`
 - **Homepage and posts index behavior**: `layouts/index.html`, `layouts/partials/posts-landing.html`, `content/posts/_index.md`
 - **Single-page rendering and post metadata**: `layouts/_default/single.html`
 - **Theme colors and responsive style overrides**: `static/style.css`
@@ -230,4 +230,4 @@ Galleon8 is maintained as a professional publishing space focused on technical w
 
 - Website: [galleon8.com](https://galleon8.com/)
 - LinkedIn: [Professional profile](https://www.linkedin.com/in/gene-danilov/)
-- Documentation showcase: [Galleon8 Docs](https://galleon8.docs.buildwithfern.com/)
+- Documentation showcase: [Galleon8 Docs](https://docs.galleon8.com/)
